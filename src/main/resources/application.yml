@@ -1,0 +1,25 @@
+server:
+  port: 8091
+spring:
+  profiles:
+    active: mysql
+  application:
+    name: liquibase
+---
+spring:
+  profiles: mysql
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/liquibase
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  liquibase:
+    parameters:
+      textColumnType: TEXT
+
