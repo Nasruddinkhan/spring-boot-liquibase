@@ -1,6 +1,8 @@
 server:
   port: 8091
 spring:
+  liquibase:
+    change-log: classpath:/db/changelog/change-db-log.xml
   profiles:
     active: mysql
   application:
@@ -19,7 +21,4 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
-  liquibase:
-    parameters:
-      textColumnType: TEXT
 
